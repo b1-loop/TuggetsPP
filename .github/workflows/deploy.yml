@@ -1,0 +1,44 @@
+﻿name: Deploy to GitHub Pages
+
+on:
+  # Körs när du pushar till main-grenen
+  push:
+    branches: ["master"]
+
+  # Gör att du kan köra den manuellt från Actions-fliken också
+  workflow_dispatch:
+
+# Ger behörighet att ändra i GITHUB_TOKEN för att kunna deploya
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tillåter bara en deploy åt gången
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Själva jobbet som lägger ut sidan
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Laddar upp hela mappen ('.')
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

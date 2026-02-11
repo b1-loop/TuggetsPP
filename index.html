@@ -5,27 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuggets Pizzeria | Tradition & Kärlek</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="site-header">
         <div class="container header-content">
-
-            <a href="#hem" class="logo-container">
+            <a href="index.html" class="logo-container">
                 <img src="images/logo-ikon.jpg" alt="Tuggets Logo" class="logo-img">
                 <div class="logo-text">
                     <h1>Tuggets</h1>
                     <span class="subtitle">EST. GÖTEBORG</span>
                 </div>
             </a>
-
-            <nav>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#hem">Hem</a></li>
-                    <li><a href="#meny">Meny</a></li>
-                    <li><a href="#om-oss">Om oss</a></li>
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="index.html#meny">Meny</a></li>
+                    <li><a href="lunch.html">Lunch</a></li>
+                    <li><a href="om-oss.html">Om oss</a></li>
                     <li><a href="#kontakt">Hitta hit</a></li>
+
+                    <li>
+                        <a href="https://www.foodora.se/restaurant/bodq/tuggets-pizzeria?utm_campaign=google_reserve_place_order_action_CH-SEO_" target="_blank" class="foodora-btn">
+                            <i class="fas fa-shopping-bag"></i> Beställ Online
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -35,7 +41,7 @@
         <div class="hero-overlay">
             <div class="hero-text">
                 <h2>Äkta Pizza. Äkta Kärlek.</h2>
-                <p>Välkommen till en familjeägd klassiker.</p>
+                <p>Pan Pizza • Italiensk Pizza • Pasta • Sallad</p>
                 <a href="#meny" class="btn">Se Vår Meny</a>
             </div>
         </div>
@@ -44,70 +50,304 @@
     <section id="meny" class="menu-section">
         <div class="container">
             <div class="section-title">
-                <h2>Våra Favoriter</h2>
-                <p class="divider">~ Urval från menyn ~</p>
+                <h2>Vår Meny</h2>
+                <p class="divider">~ Utvalda råvaror & kärlek till hantverket ~</p>
             </div>
 
-            <div class="menu-grid">
-                <div class="menu-card">
-                    <div class="card-content">
-                        <h3>Tuggets Special</h3>
-                        <p class="desc">Tomatsås, ost, oxfilé, svamp, lök & bearnaisesås.</p>
-                        <span class="price">160 kr</span>
-                    </div>
+            <div class="nav-wrapper">
+                <nav class="menu-category-nav">
+                    <a href="#cat-pan">Pan Pizzor</a>
+                    <a href="#cat-ordinarie">Ordinarie</a>
+                    <a href="#cat-veg">Vegetariskt</a>
+                    <a href="#cat-skaldjur">Skaldjur</a>
+                    <a href="#cat-mex">Mexikanskt</a>
+                    <a href="#cat-kottfars">Köttfärs</a>
+                    <a href="#cat-kyckling">Kyckling</a>
+                    <a href="#cat-oxfile">Oxfilé</a>
+                    <a href="#cat-kebabpizza">Kebabpizza</a>
+                    <a href="#cat-salami">Salami</a>
+                    <a href="#cat-inbakad">Inbakade</a>
+                    <a href="#cat-bbq">BBQ</a>
+                    <a href="#cat-gourmet">Gourmet</a>
+                    <a href="#cat-ratter">Kebabrätter</a>
+                    <a href="#cat-sallad">Sallad</a>
+                    <a href="#cat-burgare">Hamburgare</a>
+                    <a href="#cat-pasta">Pasta</a>
+                    <a href="#cat-barn">Barn & Övrigt</a>
+                </nav>
+            </div>
+
+            <div id="cat-pan" class="menu-category">
+                <h3 class="category-title">Pan Pizzor (Nyhet)</h3>
+                <p class="category-desc">Frasig surdegspizza med riktiga fluffiga kanter.<br><strong>Medium 220:- | Large 280:-</strong></p>
+
+                <div class="menu-grid">
+                    <div class="menu-card"><h4>1. Meat Lovers</h4><p class="desc">Tomatsås, ost, mozzarella, skinka, bacon, salami.</p></div>
+                    <div class="menu-card"><h4>2. Vampira (Stark)</h4><p class="desc">Tomatsås, ost, mozzarella, pepperoni, salami, champinjoner, hot honey.</p></div>
+                    <div class="menu-card"><h4>3. Florida</h4><p class="desc">Tomatsås, ost, mozzarella, lufttorkad skinka, olivolja, ruccola.</p></div>
+                    <div class="menu-card"><h4>4. Colorado</h4><p class="desc">Tomatsås, ost, mozzarella, kebabkött, valfri sås.</p></div>
+                    <div class="menu-card"><h4>5. Veggie</h4><p class="desc">Tomatsås, ost, mozzarella, champinjoner, pesto, ruccola.</p></div>
+                    <div class="menu-card"><h4>6. Queen</h4><p class="desc">Tomatsås, ost, mozzarella, olivolja, ruccola.</p></div>
                 </div>
-                <div class="menu-card">
-                    <div class="card-content">
-                        <h3>Portobello</h3>
-                        <p class="desc">Tomatsås, gorgonzola, oxfilé, svamp & sparris.</p>
-                        <span class="price">170 kr</span>
-                    </div>
-                </div>
-                <div class="menu-card">
-                    <div class="card-content">
-                        <h3>Parma (Gourmet)</h3>
-                        <p class="desc">Prosciutto, färsk paprika, färska tomater, vitlök & ruccola.</p>
-                        <span class="price">180 kr</span>
-                    </div>
-                </div>
-                <div class="menu-card">
-                    <div class="card-content">
-                        <h3>Kebabpizza</h3>
-                        <p class="desc">Klassikern med valfri sås och färska råvaror.</p>
-                        <span class="price">150 kr</span>
-                    </div>
+
+                <h4 style="text-align:center; margin: 30px 0 15px; color:var(--primary-color);">Dessert Panpizzor (M: 220:- / L: 280:-)</h4>
+                <div class="menu-grid">
+                    <div class="menu-card"><h4>1. Nutella</h4><p class="desc">Creme fraiche, nutella, valnötter, banan, bär, strössel.</p></div>
+                    <div class="menu-card"><h4>2. Chocolino</h4><p class="desc">Creme fraiche, nutella, marshmallow, banan, bär, strössel.</p></div>
                 </div>
             </div>
 
-            <div class="full-menu-link">
-                <p>Vi har även Pan Pizzor, Pasta och Hamburgare.</p>
+            <div id="cat-ordinarie" class="menu-category">
+                <h3 class="category-title">Ordinarie Pizzor</h3>
+                <p class="category-desc">Tomatsås & ost ingår.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>1. Margherita</h4> <span class="price">125:-</span></div><p class="desc">Tomatsås, ost.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>2. Vesuvio</h4> <span class="price">130:-</span></div><p class="desc">Skinka.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>3. Capricciosa</h4> <span class="price">135:-</span></div><p class="desc">Skinka, champinjoner.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>4. Laguna</h4> <span class="price">145:-</span></div><p class="desc">Skinka, räkor.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>5. Quattro Stagioni</h4> <span class="price">155:-</span></div><p class="desc">Skinka, räkor, champinjoner, kronärtskocka.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>6. Skiathos</h4> <span class="price">145:-</span></div><p class="desc">Skinka, köttfärs.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>7. Bella</h4> <span class="price">145:-</span></div><p class="desc">Skinka, bacon, lök.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>8. Faros</h4> <span class="price">150:-</span></div><p class="desc">Skinka, banan, ananas.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>9. Hawaii</h4> <span class="price">135:-</span></div><p class="desc">Skinka, ananas.</p></div>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <section id="om-oss" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h2>Om Tuggets</h2>
-                <p>Vi är en familjeägd restaurang som bemöter sina gäster som familjemedlemmar! Vi strävar alltid efter att erbjuda rätter tillagade med färska ingredienser av hög kvalité.</p>
+            <div id="cat-veg" class="menu-category">
+                <h3 class="category-title">Vegetariska Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>10. Vegetariana</h4> <span class="price">150:-</span></div><p class="desc">Lök, champinjoner, paprika, sparris, kronärtskocka, oliver.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>11. El Greco</h4> <span class="price">150:-</span></div><p class="desc">Feta, lök, tomater, oliver, feferoni.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>12. Mozzarella</h4> <span class="price">150:-</span></div><p class="desc">Mozzarella, champinjoner, tomater, vitlök.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>13. Fungi</h4> <span class="price">135:-</span></div><p class="desc">Champinjoner.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>14. Obama</h4> <span class="price">160:-</span></div><p class="desc">Mozzarella, gorgonzola, tomater, feta.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>15. Vegansk</h4> <span class="price">150:-</span></div><p class="desc">Vegansk ost, tomatsås, champinjoner, ananas, lök.</p></div>
+                </div>
             </div>
+
+            <div id="cat-skaldjur" class="menu-category">
+                <h3 class="category-title">Skaldjurs Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>16. Pescatore</h4> <span class="price">150:-</span></div><p class="desc">Räkor, tonfisk.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>17. Marinara</h4> <span class="price">150:-</span></div><p class="desc">Räkor, musslor.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>18. Quattro Fisk</h4> <span class="price">170:-</span></div><p class="desc">Räkor, tonfisk, musslor, krabfisk.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-mex" class="menu-category">
+                <h3 class="category-title">Mexikanska Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>19. Mexicana</h4> <span class="price">150:-</span></div><p class="desc">Köttfärs, paprika, jalapeno, lök, tabasco.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>20. Acapulco</h4> <span class="price">170:-</span></div><p class="desc">Oxfilé, champinjoner, jalapeno, lök, vitlök, tacokrydda, tacosås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>21. Verdi</h4> <span class="price">170:-</span></div><p class="desc">Skinka, köttfärs, champinjoner, jalapeno, tabasco.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-kottfars" class="menu-category">
+                <h3 class="category-title">Köttfärs Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>22. Millos</h4> <span class="price">155:-</span></div><p class="desc">Köttfärs, tomater, lök, vitlök, feta, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>23. Naxos</h4> <span class="price">170:-</span></div><p class="desc">Skinka, köttfärs, bacon, champinjoner, vitlök, bearnaisesås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>24. Gothia</h4> <span class="price">170:-</span></div><p class="desc">Köttfärs, feta, tomater, isbergssallad, lök, vitlök, valfri sås.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-kyckling" class="menu-category">
+                <h3 class="category-title">Kyckling Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>25. Galini</h4> <span class="price">150:-</span></div><p class="desc">Kyckling, banan, jordnötter, curry.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>26. Kyckling Special</h4> <span class="price">160:-</span></div><p class="desc">Kyckling, majs, champinjoner, lök, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>27. Roma</h4> <span class="price">170:-</span></div><p class="desc">Kyckling, tomater, lök, isbergssallad, feta, valfri sås.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-oxfile" class="menu-category">
+                <h3 class="category-title">Oxfilé Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>28. Kreta</h4> <span class="price">185:-</span></div><p class="desc">Oxfilé, köttfärs, skinka, bacon, champinjoner, vitlök, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>29. Africana</h4> <span class="price">160:-</span></div><p class="desc">Oxfilé, banan, ananas, jordnötter, curry.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>30. Portobello</h4> <span class="price">170:-</span></div><p class="desc">Oxfilé, champinjoner, sparris, gorgonzola.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>31. Reale</h4> <span class="price">160:-</span></div><p class="desc">Oxfilé, ägg, bearnaisesås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>32. Tuggets Special</h4> <span class="price">160:-</span></div><p class="desc">Oxfilé, champinjoner, lök, bearnaisesås.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-kebabpizza" class="menu-category">
+                <h3 class="category-title">Kebab Pizzor</h3>
+                <p class="category-desc">Välj mellan fläsk, nöt eller kycklingkebab.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>33. Ararat</h4> <span class="price">160:-</span></div><p class="desc">Kebabkött, skinka, feferoni, lök, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>34. Kebab Pizza</h4> <span class="price">150:-</span></div><p class="desc">Kebabkött, feferoni, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>35. Lamare</h4> <span class="price">175:-</span></div><p class="desc">Kebabkött, tomater, gurka, feferoni, lök, isbergssallad, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>36. Kebab Special</h4> <span class="price">175:-</span></div><p class="desc">Kebabkött, tomater, feferoni, lök, feta, tzatziki.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>37. Universeum</h4> <span class="price">175:-</span></div><p class="desc">Kebabkött, skinka, bacon, feferoni, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>38. Alexander</h4> <span class="price">185:-</span></div><p class="desc">Kebabkött, tomater, feferoni, lök, isbergssallad, pommes, valfri sås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>39. Gondolo</h4> <span class="price">160:-</span></div><p class="desc">Kebabkött, champinjoner, feferoni, lök, valfri sås.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-salami" class="menu-category">
+                <h3 class="category-title">Salami Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>40. Salami</h4> <span class="price">140:-</span></div><p class="desc">Salami.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>41. Olympos</h4> <span class="price">160:-</span></div><p class="desc">Salami, feta, feferoni, oliver.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>42. Salami Special</h4> <span class="price">170:-</span></div><p class="desc">Salami, mozzarella, gorgonzola, tomater.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>43. Pepperoni</h4> <span class="price">150:-</span></div><p class="desc">Pepperoni korv, mozzarella.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>44. Diavola</h4> <span class="price">155:-</span></div><p class="desc">Ananas, salami, pepperoni korv.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-inbakad" class="menu-category">
+                <h3 class="category-title">Inbakade Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>45. Calzone</h4> <span class="price">135:-</span></div><p class="desc">Skinka.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>46. Ciao Ciao</h4> <span class="price">160:-</span></div><p class="desc">Oxfilé, champinjoner, lök, vitlök.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>47. Glenns Special</h4> <span class="price">165:-</span></div><p class="desc">Oxfilé, gorgonzola, lök, vitlök.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>48. Calzeroni</h4> <span class="price">145:-</span></div><p class="desc">Skinka, pepperoni korv.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-bbq" class="menu-category">
+                <h3 class="category-title">BBQ Pizzor</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>49. BBQ Chicken</h4> <span class="price">170:-</span></div><p class="desc">BBQ sås, kyckling, bacon, rödlök.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>50. BBQ Pork</h4> <span class="price">180:-</span></div><p class="desc">BBQ sås, bacon, ananas, kebab, valfri sås.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-gourmet" class="menu-category">
+                <h3 class="category-title">Gourmet Pizzor</h3>
+                <p class="category-desc">Mozzarella, tomatsås, olivolja ingår.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>51. Bianka</h4> <span class="price">180:-</span></div><p class="desc">Valnötter, chèvre, honung, ruccola, olivolja.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>52. Parma</h4> <span class="price">180:-</span></div><p class="desc">Prosciutto, paprika, tomater, vitlök, ruccola.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>53. Roxanne</h4> <span class="price">180:-</span></div><p class="desc">Prosciutto, ruccola, pesto.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>54. Madeleine (Veg)</h4> <span class="price">180:-</span></div><p class="desc">Chèvre, soltorkade tomater, ruccola, honung.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>55. Isabelle</h4> <span class="price">190:-</span></div><p class="desc">Prosciutto, parmesan, soltorkade tomater, ruccola.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-ratter" class="menu-category">
+                <h3 class="category-title">Kebabrätter & Tallrikar</h3>
+
+                <h4 class="sub-category-title">I Bröd / Rulle (Nybakat bröd)</h4>
+                <p class="category-desc">Inkl. isberg, tomater, gurka, feferoni, rödlök, valfri sås.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>Grekisk</h4> <span class="price">145:-</span></div><p class="desc">Kebabkött, feta, tzatziki.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>Hawaii</h4> <span class="price">145:-</span></div><p class="desc">Kebabkött, ananas.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>Standard</h4> <span class="price">140:-</span></div><p class="desc">Kebabkött.</p></div>
+                </div>
+
+                <h4 class="sub-category-title" style="margin-top:40px;">Tallrikar (Ris eller Pommes)</h4>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>Grekisk</h4> <span class="price">145:-</span></div><p class="desc">Kebabkött, feta, tzatziki.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>Hawaii</h4> <span class="price">145:-</span></div><p class="desc">Kebabkött, ananas.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>Standard</h4> <span class="price">140:-</span></div><p class="desc">Kebabkött.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-sallad" class="menu-category">
+                <h3 class="category-title">Sallader</h3>
+                <p class="category-desc">Inkl. nybakat bröd, isberg, tomater, gurka, valfri sås.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><h4>1. Kycklingsallad</h4><p class="desc">Kyckling, majs, rödlök. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>2. Räksallad</h4><p class="desc">Räkor, ananas, rödlök, citron. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>3. Amerikansk</h4><p class="desc">Skinka, ost, ananas. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>4. Tonfisk sallad</h4><p class="desc">Tonfisk, majs, rödlök, citron. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>5. Grekisk sallad</h4><p class="desc">Feta, oliver, paprika, rödlök, olivolja. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>6. Kebab sallad</h4><p class="desc">Kebabkött, feferoni, rödlök. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>7. Falafel sallad</h4><p class="desc">Falafel, rödlök, majs, ananas. <span class="price">140:-</span></p></div>
+                    <div class="menu-card"><h4>8. Ceasar sallad</h4><p class="desc">Kyckling, bacon, krutonger, parmesan. <span class="price">140:-</span></p></div>
+                </div>
+            </div>
+
+            <div id="cat-burgare" class="menu-category">
+                <h3 class="category-title">Hamburgare</h3>
+                <p class="category-desc">Inkl. isberg, tomater, gurka, rödlök, dressing.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><h4>1. Hamburgare (90g)</h4><span class="price">85:-</span><br>Med bröd.</div>
+                    <div class="menu-card"><h4>2. Hamburgare Tallrik (90g)</h4><span class="price">105:-</span><br>Med pommes.</div>
+                    <div class="menu-card"><h4>3. Hamburgare (150g)</h4><span class="price">95:-</span><br>Med bröd.</div>
+                    <div class="menu-card"><h4>4. Hamburgare Tallrik (150g)</h4><span class="price">115:-</span><br>Med pommes.</div>
+                    <div class="menu-card"><h4>5. BBQ Burgare (90g)</h4><span class="price">110:-</span><br>BBQ sås, ost, pommes.</div>
+                    <div class="menu-card"><h4>6. BBQ Burgare (150g)</h4><span class="price">120:-</span><br>BBQ sås, ost, pommes.</div>
+                </div>
+            </div>
+
+            <div id="cat-pasta" class="menu-category">
+                <h3 class="category-title">Pasta</h3>
+                <p class="category-desc">Pennepasta ingår i samtliga rätter.</p>
+                <div class="menu-grid">
+                    <div class="menu-card"><div class="card-header"><h4>1. Carbonara</h4> <span class="price">180:-</span></div><p class="desc">Bacon, lök, parmesan, gräddsås, svartpeppar.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>2. Della Casa</h4> <span class="price">200:-</span></div><p class="desc">Oxfilé, lök, parmesan, champinjoner, gräddsås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>3. Kyckling</h4> <span class="price">180:-</span></div><p class="desc">Kyckling, lök, parmesan, champinjoner, vitlök, gräddsås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>4. Bolognese</h4> <span class="price">180:-</span></div><p class="desc">Krämig köttfärssås, parmesan.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>5. Vegetale</h4> <span class="price">180:-</span></div><p class="desc">Grillade grönsaker, parmesan, tomatsås.</p></div>
+                    <div class="menu-card"><div class="card-header"><h4>6. Lasagne</h4> <span class="price">160:-</span></div><p class="desc">Hemlagad.</p></div>
+                </div>
+            </div>
+
+            <div id="cat-barn" class="menu-category">
+                <h3 class="category-title">Barnmeny & Övrigt</h3>
+                <div class="menu-grid">
+                    <div class="menu-card"><h4>1. Hamburgare med bröd</h4><span class="price">99:-</span><br>Inkl. dip.</div>
+                    <div class="menu-card"><h4>2. 5 st Chicken Nuggets</h4><span class="price">99:-</span><br>Med pommes och dip.</div>
+                    <div class="menu-card"><h4>3. Nötkebab tallrik</h4><span class="price">99:-</span><br>Med pommes och dip.</div>
+                    <div class="menu-card"><h4>4. 5 st Chili Cheese</h4><span class="price">99:-</span><br>Med pommes.</div>
+                </div>
+
+                <div style="margin-top: 50px; text-align:center; padding: 20px; background:#fff; border:1px solid #ddd;">
+                    <h4 style="color:var(--primary-color); margin-bottom:15px;">Extra Tillbehör</h4>
+                    <p>Kött/Skaldjur: 35:- &nbsp;|&nbsp; Grönsaker/Ost: 25:- &nbsp;|&nbsp; Sås: 15:-</p>
+                    <p>Glutenfri botten: 40:- &nbsp;|&nbsp; Pommes/Ris tallrik: 65:-</p>
+                    <p>Barnpizza: -10:- från ordinarie pris &nbsp;|&nbsp; Familjepizza: Dubbla priset + 25:-</p>
+                    <br>
+                    <h4 style="color:var(--primary-color); margin-bottom:15px;">Dryck</h4>
+                    <p>33 cl: 25:- &nbsp;|&nbsp; 50 cl: 35:- &nbsp;|&nbsp; 2 Liter: 50:-</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <footer id="kontakt">
         <div class="container footer-grid">
+
             <div class="footer-col">
                 <h4>Hitta Hit</h4>
-                <p>Södra Vägen 73, Göteborg</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Södra+Vägen+73+Göteborg" target="_blank" class="map-link">
+                    <i class="fas fa-map-marker-alt"></i> Södra Vägen 73<br>Göteborg
+                </a>
             </div>
+
             <div class="footer-col">
                 <h4>Kontakt</h4>
-                <p>031 81 13 07</p>
-                <p>info@tuggets.se</p>
+                <p><a href="tel:031811307" class="phone-link"><i class="fas fa-phone-alt"></i> 031 81 13 07</a></p>
+                <p><a href="mailto:info@tuggets.se" class="email-link">info@tuggets.se</a></p>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/TuggetsPizzeria" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/TuggetsPizzeria" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Öppettider</h4>
+                <div class="opening-hours">
+                    <div class="oh-row">
+                        <span class="day">Mån - Fre</span>
+                        <span class="time">11:00 - 21:00</span>
+                    </div>
+                    <div class="oh-row">
+                        <span class="day">Lör - Sön</span>
+                        <span class="time">12:00 - 21:00</span>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="copyright">
-            <p>&copy; 2024 Tuggets Pizzeria.</p>
+            <p>© 2024 Tuggets Pizzeria.</p>
         </div>
     </footer>
 
