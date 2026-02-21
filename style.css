@@ -146,6 +146,56 @@ a {
             width: 100%;
         }
 
+/* --- HAMBURGER MENU --- */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1040;
+}
+
+.nav-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* --- HERO SECTION --- */
 .hero {
     height: 70vh;
@@ -255,7 +305,8 @@ a {
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-        .menu-category-nav a:hover {
+        .menu-category-nav a:hover,
+        .menu-category-nav a.active {
             background: var(--primary-color);
             color: #fff;
             border-color: var(--primary-color);
@@ -301,15 +352,18 @@ a {
 .menu-card {
     background: #fff;
     border: 1px solid #ddd;
+    border-left: 3px solid transparent;
     padding: 25px;
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
 }
 
     .menu-card:hover {
-        transform: translateY(-3px);
+        transform: translateY(-4px);
         border-color: var(--primary-color);
+        border-left-color: var(--primary-color);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
 .card-header {
@@ -444,6 +498,52 @@ a {
     color: var(--primary-color);
 }
 
+/* --- SCROLL FADE-IN ANIMATIONS --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SCROLL TO TOP BUTTON --- */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--gold-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
 /* --- FOOTER & KONTAKT --- */
 footer {
     background-color: #1a1a1a;
@@ -559,19 +659,74 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
     .header-content {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+        transition: right 0.3s ease;
+        z-index: 1050;
+        padding-top: 90px;
+    }
+
+    .main-nav.open {
+        right: 0;
     }
 
     .main-nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 30px;
+    }
+
+    .main-nav li {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .main-nav li:last-child {
+        border-bottom: none;
+        margin-top: 15px;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .main-nav .foodora-btn {
+        text-align: center;
         justify-content: center;
     }
 
+    .hero {
+        height: 55vh;
+    }
+
     .hero-text h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 2.2rem;
     }
 
     .story-container {
@@ -586,9 +741,8 @@ footer {
         font-size: 2rem;
     }
 
-    /* Justering för mobil meny */
     .nav-wrapper {
-        top: 80px;
+        top: 75px;
         padding: 10px;
     }
 
@@ -596,12 +750,28 @@ footer {
         gap: 8px;
     }
 
-        .menu-category-nav a {
-            font-size: 0.75rem; /* Lite mindre text på mobil för att få plats */
-            padding: 6px 12px;
-            flex-grow: 1; /* Låter knapparna växa och fylla raden snyggt */
-            text-align: center;
-        }
+    .menu-category-nav a {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .menu-category {
+        scroll-margin-top: 220px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
 }
 /* --- FOODORA KNAPP I MENYN --- */
 .main-nav .foodora-btn {
