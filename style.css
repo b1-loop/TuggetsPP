@@ -760,8 +760,12 @@ footer {
     }
 
     .main-nav .foodora-btn {
+        display: flex;
+        width: 100%;
         text-align: center;
         justify-content: center;
+        padding: 14px 22px;
+        box-sizing: border-box;
     }
 
     /* Hero */
@@ -820,6 +824,19 @@ footer {
 
     .menu-category-nav::-webkit-scrollbar {
         display: none;
+    }
+
+    /* Fade-gradient som hint att det finns fler kategorier att scrolla till */
+    .nav-wrapper::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 48px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.97));
+        pointer-events: none;
+        z-index: 1;
     }
 
     .menu-category-nav a {
@@ -1001,8 +1018,9 @@ footer {
     }
 
     .mobile-bottom-bar a {
-        font-size: 0.8rem;
-        padding: 10px 8px;
+        font-size: 0.85rem;
+        padding: 12px 8px;
+        min-height: 48px;
     }
 }
 /* --- FOODORA KNAPP I MENYN --- */
