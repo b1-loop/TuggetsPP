@@ -1070,10 +1070,11 @@ footer {
     transition: all 0.2s;
 }
 .lang-btn .fi {
-    display: block;
     width: 1.6em;
     height: 1.2em;
     border-radius: 2px;
+    pointer-events: none;
+    font-size: 1.2rem;
 }
 .lang-btn.active,
 .lang-btn:hover {

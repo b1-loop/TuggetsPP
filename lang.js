@@ -496,8 +496,9 @@ function initLanguage() {
   const saved = localStorage.getItem('tuggets_lang') || 'sv';
   applyTranslations(saved);
   document.addEventListener('click', e => {
-    if (e.target.matches('.lang-btn')) {
-      applyTranslations(e.target.dataset.lang);
+    const btn = e.target.closest('.lang-btn');
+    if (btn) {
+      applyTranslations(btn.dataset.lang);
     }
   });
 }
