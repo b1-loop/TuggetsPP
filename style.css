@@ -1050,3 +1050,36 @@ footer {
         transform: translateY(-2px); /* Knappen lyfter lite */
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
+}
+
+/* --- LANGUAGE SWITCHER --- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.lang-btn {
+    background: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    line-height: 1;
+    opacity: 0.45;
+    transition: all 0.2s;
+}
+.lang-btn.active,
+.lang-btn:hover {
+    opacity: 1;
+    border-color: var(--primary-color);
+}
+@media (max-width: 768px) {
+    .main-nav .lang-switcher {
+        padding: 16px 0;
+        justify-content: center;
+        gap: 12px;
+    }
+    .main-nav .lang-btn {
+        font-size: 1.8rem;
+    }

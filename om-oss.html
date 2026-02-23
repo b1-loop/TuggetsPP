@@ -31,15 +31,19 @@
             </button>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Hem</a></li>
-                    <li><a href="index.html#meny">Meny</a></li>
-                    <li><a href="lunch.html">Lunch</a></li>
-                    <li><a href="om-oss.html" class="active">Om oss</a></li>
-                    <li><a href="index.html#kontakt">Hitta hit</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Hem</a></li>
+                    <li><a href="index.html#meny" data-i18n="nav_menu">Meny</a></li>
+                    <li><a href="lunch.html" data-i18n="nav_lunch">Lunch</a></li>
+                    <li><a href="om-oss.html" class="active" data-i18n="nav_about">Om oss</a></li>
+                    <li><a href="index.html#kontakt" data-i18n="nav_find">Hitta hit</a></li>
                     <li>
                         <a href="https://www.foodora.se/restaurant/bodq/tuggets-pizzeria?utm_campaign=google_reserve_place_order_action_CH-SEO_" target="_blank" class="foodora-btn">
-                            <i class="fas fa-shopping-bag"></i> Beställ Online
+                            <i class="fas fa-shopping-bag"></i> <span data-i18n="nav_order">Beställ Online</span>
                         </a>
+                    </li>
+                    <li class="lang-switcher">
+                        <button class="lang-btn active" data-lang="sv" title="Svenska">🇸🇪</button>
+                        <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
                     </li>
                 </ul>
             </nav>
@@ -48,30 +52,30 @@
 
     <section class="page-header">
         <div class="header-overlay">
-            <h1>Vår Historia</h1>
-            <p class="subtitle">Mer än bara pizza</p>
+            <h1 data-i18n="about_title">Vår Historia</h1>
+            <p class="subtitle" data-i18n="about_subtitle">Mer än bara pizza</p>
         </div>
     </section>
 
     <section class="story-section">
         <div class="container story-container" style="justify-content: center;">
             <div class="story-text" style="max-width: 800px; margin: 0 auto;">
-                <h2 class="vintage-title">Familj, Tradition & Hantverk</h2>
-                <p class="lead-text">
+                <h2 class="vintage-title" data-i18n="about_heading">Familj, Tradition & Hantverk</h2>
+                <p class="lead-text" data-i18n="about_lead">
                     Välkommen till Tuggets – en plats där varje gäst är en del av familjen.
                 </p>
-                <p>
+                <p data-i18n="about_p1">
                     På Södra Vägen 73, i hjärtat av Göteborg, har vi skapat en oas för dig som älskar mat lagad med omsorg. För oss är en pizzeria inte bara en restaurang; det är ett andra vardagsrum. Vi är ett familjeägt företag som drivs av en enkel men kraftfull filosofi: att bemöta våra gäster precis som vi bemöter våra egna familjemedlemmar.
                 </p>
                 <hr class="story-divider">
-                <p>
+                <p data-i18n-html="about_p2_html">
                     <strong>Kärleken till råvaran</strong><br>
                     Vi tror inte på genvägar. I vårt kök råder en ständig strävan efter kvalitet. Det betyder att vi handplockar våra ingredienser och förbereder allt från grunden. Vi strävar alltid efter att erbjuda rätter tillagade med färska ingredienser av hög kvalité.
                 </p>
-                <p>
+                <p data-i18n="about_p3">
                     Att tillaga våra rätter i vårt eget kök betyder att du som gäst får en färsk, god och hemmagjord matupplevelse. Oavsett om du beställer en klassisk Vesuvio, en lyxig Oxfilépizza eller vår populära Pan Pizza, kan du känna smaken av äkta hantverk i varje tugga.
                 </p>
-                <p class="sign-off">
+                <p class="sign-off" data-i18n="about_signoff">
                     Varmt välkommen hem till oss.
                 </p>
             </div>
@@ -81,13 +85,13 @@
     <footer id="kontakt">
         <div class="container footer-grid">
             <div class="footer-col">
-                <h4>Hitta Hit</h4>
+                <h4 data-i18n="footer_find">Hitta Hit</h4>
                 <a href="https://www.google.com/maps/search/?api=1&query=Tuggets+Pizzeria+Södra+Vägen+73+Göteborg" target="_blank" class="map-link">
                     <i class="fas fa-map-marker-alt"></i> Södra Vägen 73<br>Göteborg
                 </a>
             </div>
             <div class="footer-col">
-                <h4>Kontakt</h4>
+                <h4 data-i18n="footer_contact">Kontakt</h4>
                 <p><a href="tel:031811307" class="phone-link"><i class="fas fa-phone-alt"></i> 031 81 13 07</a></p>
                 <p><a href="mailto:info@tuggets.se" class="email-link">info@tuggets.se</a></p>
                 <div class="social-icons">
@@ -96,10 +100,10 @@
                 </div>
             </div>
             <div class="footer-col">
-                <h4>Öppettider</h4>
+                <h4 data-i18n="footer_hours">Öppettider</h4>
                 <div class="opening-hours">
-                    <div class="oh-row"><span class="day">Mån - Fre</span><span class="time">11:00 - 21:00</span></div>
-                    <div class="oh-row"><span class="day">Lör - Sön</span><span class="time">12:00 - 21:00</span></div>
+                    <div class="oh-row"><span class="day" data-i18n="footer_weekdays">Mån - Fre</span><span class="time">11:00 - 21:00</span></div>
+                    <div class="oh-row"><span class="day" data-i18n="footer_weekend">Lör - Sön</span><span class="time">12:00 - 21:00</span></div>
                 </div>
             </div>
         </div>
@@ -107,14 +111,15 @@
     </footer>
 
     <div class="mobile-bottom-bar">
-        <a href="tel:031811307" class="bar-call"><i class="fas fa-phone-alt"></i> Ring oss</a>
-        <a href="https://www.foodora.se/restaurant/bodq/tuggets-pizzeria?utm_campaign=google_reserve_place_order_action_CH-SEO_" target="_blank" class="bar-order"><i class="fas fa-shopping-bag"></i> Beställ</a>
+        <a href="tel:031811307" class="bar-call"><i class="fas fa-phone-alt"></i> <span data-i18n="bar_call">Ring oss</span></a>
+        <a href="https://www.foodora.se/restaurant/bodq/tuggets-pizzeria?utm_campaign=google_reserve_place_order_action_CH-SEO_" target="_blank" class="bar-order"><i class="fas fa-shopping-bag"></i> <span data-i18n="bar_order">Beställ</span></a>
     </div>
 
     <button class="scroll-to-top" aria-label="Scrolla till toppen">
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <script src="lang.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
