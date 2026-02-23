@@ -13,14 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
         });
 
-        if (navOverlay) {
-            navOverlay.addEventListener('click', function () {
+        // Stäng menyn vid tap utanför menypanelen (fungerar på riktiga mobila enheter)
+        document.addEventListener('touchstart', function (e) {
+            if (mainNav.classList.contains('open') &&
+                !mainNav.contains(e.target) &&
+                !hamburger.contains(e.target)) {
+                e.preventDefault();
                 hamburger.classList.remove('active');
                 mainNav.classList.remove('open');
                 navOverlay.classList.remove('visible');
                 document.body.style.overflow = '';
-            });
-        }
+            }
+        }, { passive: false });
 
         mainNav.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {

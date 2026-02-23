@@ -189,6 +189,7 @@ a {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
+    pointer-events: none; /* Blockerar inte klick/touch på menylänkarna */
 }
 
 .nav-overlay.visible {
