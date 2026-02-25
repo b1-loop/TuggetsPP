@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (categoryNav && menuCategories.length > 0) {
         var categoryLinks = categoryNav.querySelectorAll('a');
+        var userHasScrolled = false;
+        window.addEventListener('scroll', function () { userHasScrolled = true; }, { once: true });
 
         var categoryObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
@@ -73,7 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     categoryLinks.forEach(function (link) {
                         if (link.getAttribute('href') === '#' + id) {
                             link.classList.add('active');
-                            link.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+                            if (userHasScrolled) {
+                                link.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+                            }
                         } else {
                             link.classList.remove('active');
                         }
