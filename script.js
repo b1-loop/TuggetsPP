@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     categoryLinks.forEach(function (link) {
                         if (link.getAttribute('href') === '#' + id) {
                             link.classList.add('active');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
                         } else {
                             link.classList.remove('active');
                         }
@@ -93,6 +94,61 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollBtn.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+    }
+
+    // --- Menu Search ---
+    var searchInput = document.getElementById('menuSearch');
+    var noResultsMsg = document.getElementById('searchNoResults');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            var query = this.value.toLowerCase().trim();
+            var totalVisible = 0;
+
+            document.querySelectorAll('.menu-category').forEach(function (category) {
+                var cards = category.querySelectorAll('.menu-card');
+                var visibleInCat = 0;
+
+                cards.forEach(function (card) {
+                    if (!query || card.textContent.toLowerCase().includes(query)) {
+                        card.classList.remove('search-hidden');
+                        visibleInCat++;
+                        totalVisible++;
+                    } else {
+                        card.classList.add('search-hidden');
+                    }
+                });
+
+                if (cards.length > 0) {
+                    category.classList.toggle('search-hidden', visibleInCat === 0);
+                }
+            });
+
+            if (noResultsMsg) {
+                noResultsMsg.classList.toggle('visible', totalVisible === 0 && query.length > 0);
+            }
+        });
+    }
+
+    // --- Open/Closed Status ---
+    function getOpenStatus() {
+        var now = new Date();
+        var day = now.getDay();
+        var t = now.getHours() * 60 + now.getMinutes();
+        return day >= 1 && day <= 5 ? (t >= 660 && t < 1260) : (t >= 720 && t < 1260);
+    }
+
+    var openStatusEl = document.getElementById('openStatus');
+    if (openStatusEl) {
+        var isOpen = getOpenStatus();
+        openStatusEl.classList.toggle('closed', !isOpen);
+        var statusTextEl = openStatusEl.querySelector('[data-i18n]');
+        if (statusTextEl) {
+            statusTextEl.setAttribute('data-i18n', isOpen ? 'status_open' : 'status_closed');
+            if (typeof applyTranslations === 'function') {
+                applyTranslations(localStorage.getItem('tuggets_lang') || 'sv');
+            }
+        }
     }
 
     // --- Dynamic Copyright Year ---

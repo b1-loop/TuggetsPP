@@ -224,6 +224,12 @@ const translations = {
     lunch_served_html: '<strong>Serveras vardagar 11:00 – 14:00</strong><br>Välkommen in i värmen för en lunch som ger dig energi för resten av dagen.',
     lunch_bon: 'Smaklig måltid!',
 
+    // Search & status
+    search_placeholder: 'Sök pizza, ingredienser...',
+    search_no_results: 'Inga rätter matchade din sökning.',
+    status_open: 'Öppet nu',
+    status_closed: 'Stängt nu',
+
     // About page
     about_title: 'Vår Historia',
     about_subtitle: 'Mer än bara pizza',
@@ -460,6 +466,12 @@ const translations = {
     lunch_served_html: '<strong>Served weekdays 11:00 – 14:00</strong><br>Welcome in for a lunch that gives you energy for the rest of the day.',
     lunch_bon: 'Enjoy your meal!',
 
+    // Search & status
+    search_placeholder: 'Search pizza, ingredients...',
+    search_no_results: 'No dishes matched your search.',
+    status_open: 'Open now',
+    status_closed: 'Closed now',
+
     // About page
     about_title: 'Our Story',
     about_subtitle: 'More than just pizza',
@@ -483,6 +495,12 @@ function applyTranslations(lang) {
     const key = el.dataset.i18nHtml;
     if (translations[lang] && translations[lang][key] !== undefined) {
       el.innerHTML = translations[lang][key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      el.placeholder = translations[lang][key];
     }
   });
   document.querySelectorAll('.lang-btn').forEach(btn => {

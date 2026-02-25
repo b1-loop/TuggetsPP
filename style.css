@@ -1050,7 +1050,6 @@ footer {
         transform: translateY(-2px); /* Knappen lyfter lite */
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
-}
 
 /* --- LANGUAGE SWITCHER --- */
 .lang-switcher {
@@ -1090,3 +1089,100 @@ footer {
     .main-nav .lang-btn {
         font-size: 1.4rem;
     }
+}
+
+/* --- MENY SÖKNING --- */
+.menu-search-wrapper {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+
+.search-box {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 450px;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+.menu-search-input {
+    width: 100%;
+    padding: 11px 18px 11px 40px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.menu-search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(138, 44, 44, 0.1);
+}
+
+.menu-card.search-hidden {
+    display: none !important;
+}
+
+.menu-category.search-hidden {
+    display: none;
+}
+
+.search-no-results {
+    display: none;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 40px 0;
+    font-size: 1.1rem;
+}
+
+.search-no-results.visible {
+    display: block;
+}
+
+/* --- ÖPPET/STÄNGT BADGE --- */
+.open-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-top: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: rgba(76, 175, 80, 0.15);
+    color: #2e7d32;
+}
+
+.open-status.closed {
+    background: rgba(229, 57, 53, 0.15);
+    color: #c62828;
+}
+
+.open-status .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .menu-search-input {
+        font-size: 1rem; /* Hindrar iOS från att zooma in på fokus */
+    }
+}
